@@ -8,8 +8,8 @@ clean:
 	rm -rf $(VENV_NAME) __pycache__ .pytest_cache *.pyc
 
 test:
-	. $(VENV_NAME)/Scripts/activate && pytest
+	. $(VENV_NAME)/bin/python -m pytest || $(VENV_NAME)/Scripts/python -m pytest
 
 run:
-	. $(VENV_NAME)/Scripts/activate && python app.py
+	. $(VENV_NAME)/bin/python app.py || $(VENV_NAME)/Scripts/Python app.py
 
